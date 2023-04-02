@@ -1,6 +1,6 @@
-# Commetnator AI README
+# Commentator AI README
 
-A plugin designed to add comments to code using Chat GPT. You will need to generate an API key here:
+A plugin for VSCode designed to add comments to code using Chat GPT. You will need to generate an API key here:
 
 https://platform.openai.com/
 
