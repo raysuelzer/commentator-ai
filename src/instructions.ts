@@ -2,13 +2,21 @@
 import * as vscode from 'vscode';
 
 
-export const TS_DOC_COMMENT_INSTRUCTION = `Use the code given to add TSDoc comments. Do not alter the code. Only add comments to the function declaration so that the are properly documented. Do not add additional commenatary. Return your response only as a string containing the code.
+export const TS_DOC_COMMENT_INSTRUCTION = `Use the code given to add TSDoc comments.
+Do not alter the code.
+Only add comments to the function declaration so that they are properly documented in TS Doc Format.
+Do not add additional commenatary or explanations outside of TSDoc Comments.
+Your response should only contain the code.
 Here is the code:`;
 
-export const RUBY_DOC_COMMENT_INSTRUCTION = `Use the ruby code given to add RDoc comments. Do not alter the code. Only add comments to the function declaration so that the are properly documented. Do not add additional commenatary. Return your response only as a string containing the code.
+export const RUBY_DOC_COMMENT_INSTRUCTION = `Use the ruby code given to add RDoc comments.
+Do not alter the code.
+Only add comments to the function declaration so that they are properly documented in RDoc Format.
+Do not add additional commenatary or explanations outside of RDoc Comments.
+Your response should only contain the code.
 Here is the code:`;
 
-export const GENERAL_COMMENT_INSTRUCTION = `Use the code given to add comments. Do not alter the code. There is no need to comment every line, only the lines that may be more complicated. Do not add additional commenatary. Return your response only as a string containing the code.
+export const GENERAL_COMMENT_INSTRUCTION = `Use the code given to add comments. Do not alter the code. There is no need to comment every line, only the lines that may be more complicated. Do not add additional commenatary. Return only the code with our code comments in your response.
 Here is the code:`;
 
 

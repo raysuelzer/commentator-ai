@@ -1,8 +1,8 @@
 {
   "name": "commentatorAI",
-  "displayName": "commentatorAI",
+  "displayName": "Commentator AI",
   "description": "Add comments to your code using Chat GPT. You will need an API key. You can currently get an API key which provides about $18 in credits for free. Go to https://platform.openai.com/ and generate an API key.",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "engines": {
     "vscode": "^1.76.0"
   },
