@@ -8,6 +8,10 @@ https://platform.openai.com/
 
 Open AI current provides a certain number of free credits.
 
+
+[CommentatorAI.webm](https://user-images.githubusercontent.com/1176341/229384944-1f7e811a-2a88-4495-98cd-997eca875529.webm)
+
+
 ## Features
 
 - Highlight some code, then right click and you will see a few options such as "Add General Comments" or "Add TS Doc Comments" or "Run Custom GPT Prompt"
@@ -55,7 +59,6 @@ The Commentator AI extension provides the following settings for configuration:
 
 Just for fun
 
-### 0.0.1
+### 0.0.4
 
 Initial release of commenator AI
-
