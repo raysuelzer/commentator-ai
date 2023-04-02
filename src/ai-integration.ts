@@ -1,15 +1,20 @@
 import { Configuration, OpenAIApi } from "openai";
-import { openAiKey } from "./key.secret";
-
-const configuration = new Configuration({
-  apiKey: openAiKey
-});
-
-const openai = new OpenAIApi(configuration);
 
 export class OpenAIIntegration {
+
+  private configuration: Configuration;
+
+  private openai: OpenAIApi;
+
+  constructor(openAiKey: string) {
+    this.configuration = new Configuration({
+      apiKey: openAiKey
+    });
+    this.openai = new OpenAIApi(this.configuration);
+  }
+
   async addCommentsChat(code: string, instruction: string): Promise<string> {
-    return openai.createChatCompletion(
+    return this.openai.createChatCompletion(
       {
         model: "gpt-3.5-turbo",
         messages: [{

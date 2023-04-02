@@ -1,7 +1,7 @@
 {
-  "name": "commentator-ai",
-  "displayName": "commentator-ai",
-  "description": "Add comments to your code using Chat GPT",
+  "name": "commentatorAI",
+  "displayName": "commentatorAI",
+  "description": "Add comments to your code using Chat GPT. You will need an API key. You can currently get an API key which provides about $18 in credits for free. Go to https://platform.openai.com/ and generate an API key.",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.76.0"
@@ -12,41 +12,65 @@
   "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
+    "configuration": {
+      "title": "Commentator AI",
+      "properties": {
+        "commentatorAI.formatAfterEdit": {
+          "type": "boolean",
+          "default": true,
+          "description": "Format document after applying edit?"
+        },
+        "commentatorAI.openAIKey": {
+          "type": "string",
+          "default": "",
+          "description": "Your OpenAI API Key"
+        },
+        "commentatorAI.customPrompt": {
+          "type": "string",
+          "default": "Add comments to this code. Return only a string with the updated code. Here is the code:",
+          "description": "If you want to play around with your own prompt instruction you can enter it here. The code will be appended to the end of the prompt. It is likely(?) important to ask for only the string containing the updated code back to avoid GPT adding additional commentary."
+        }
+      }
+    },
     "commands": [
       {
-        "command": "commentThis.tsdoc",
+        "command": "commentatorAI.tsdoc",
         "title": "Add TSDoc Comments"
       },
       {
-        "command": "commentThis.rdoc",
+        "command": "commentatorAI.rdoc",
         "title": "Add Ruby RDoc Comments"
       },
       {
-        "command": "commentThis.general",
+        "command": "commentatorAI.general",
         "title": "Add General Comments"
+      },
+      {
+        "command": "commentatorAI.custom",
+        "title": "Run Custom GPT Prompt"
       }
     ],
     "menus": {
       "editor/context": [
         {
-          "command": "viewAriaSuggestions.view",
-          "group": "2_modification",
-          "when": "editorLangId == html"
-        },
-        {
-          "command": "commentThis.general",
+          "command": "commentatorAI.general",
           "group": "2_modification",
           "when": "editorTextFocus && editorHasSelection"
         },
         {
-          "command": "commentThis.tsdoc",
+          "command": "commentatorAI.tsdoc",
           "group": "2_modification",
-          "when": "editorTextFocus && editorLangId == typescript"
+          "when": "editorTextFocus && editorHasSelection && editorLangId == typescript"
         },
         {
-          "command": "commentThis.rdoc",
+          "command": "commentatorAI.rdoc",
           "group": "2_modification",
-          "when": "editorTextFocus && editorLangId == ruby"
+          "when": "editorTextFocus && editorHasSelection && editorLangId == ruby"
+        },
+        {
+          "command": "commentatorAI.custom",
+          "group": "2_modification",
+          "when": "editorTextFocus && editorHasSelection"
         }
       ]
     }
