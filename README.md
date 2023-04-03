@@ -2,6 +2,8 @@
 
 A plugin for VSCode designed to add comments to code using Chat GPT. Note, this is just an afternoon project to play around as an extremely minimal proof of concept. 
 
+You can grab the installer vsix in the release section. Note: No plans to publish this since to the extensions store as I don't want to maintain it. 
+
 You will need to generate an API key here:
 
 https://platform.openai.com/
