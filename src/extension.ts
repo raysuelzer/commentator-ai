@@ -56,7 +56,7 @@ async function addComments(lang?: string) {
   await vscode.window.withProgress(
     {
       location: vscode.ProgressLocation.Notification,
-      title: 'Getting comments... Do not unselect the code.',
+      title: `Getting comments... Do not unselect the code. Prompt: ${instruction}`,
       cancellable: false,
     },
     async (progress) => {
